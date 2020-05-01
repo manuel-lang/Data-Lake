@@ -14,10 +14,6 @@ os.environ['AWS_SECRET_ACCESS_KEY'] = config.get('AWS', 'AWS_SECRET_ACCESS_KEY')
 
 
 def create_spark_session():
-    """
-    Creates a new or uses the existing spark session.
-    :return:
-    """
     spark = SparkSession \
         .builder \
         .config("spark.jars.packages", "org.apache.hadoop:hadoop-aws:2.7.0") \
@@ -118,7 +114,7 @@ def process_log_data(spark, input_data, output_data):
     artists_songs_logs = songs_logs.join(artists_df, (songs_logs.artist == artists_df.name))
     songplays = artists_songs_logs.join(
         time_table,
-        artists_songs_logs.ts == time_table.start_time_raw, 'left'
+        artists_songs_logs.ts == time_table.ts, 'left'
     ).drop(artists_songs_logs.year)
 
     # write songplays table to parquet files partitioned by year and month
