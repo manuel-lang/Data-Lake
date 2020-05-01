@@ -14,6 +14,9 @@ os.environ['AWS_SECRET_ACCESS_KEY'] = config.get('AWS', 'AWS_SECRET_ACCESS_KEY')
 
 
 def create_spark_session():
+    """
+    Creates a new or uses the existing spark session.
+    """
     spark = SparkSession \
         .builder \
         .config("spark.jars.packages", "org.apache.hadoop:hadoop-aws:2.7.0") \
