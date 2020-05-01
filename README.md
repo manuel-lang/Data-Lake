@@ -1,12 +1,11 @@
 # Data-Lake
 Project Data Lake as part of Udacity's Data Engineering Nanodegree
 
-## Introduction
-A music streaming startup, Sparkify, has grown their user base and song database even more and want to move their data warehouse to a data lake. Their data resides in S3, in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app.
+## Purpose of this project
 
-As their data engineer, you are tasked with building an ETL pipeline that extracts their data from S3, processes them using Spark, and loads the data back into S3 as a set of dimensional tables. This will allow their analytics team to continue finding insights in what songs their users are listening to.
+As the startup sparkify is scaling up quickly, their existing data warehouse can not handle the massive data resources efficiently any longer. They heard about Spark and were curious how it could help them. With this project, they can now analyse their data in a distributed way in-memory. This leads to huge speedups comparing to the existing approach and allows them to keep track of their clients' behavior easily.
 
-You'll be able to test your database and ETL pipeline by running queries given to you by the analytics team from Sparkify and compare your results with their expected results.
+Moreover, this data lake automates the entire data fusion process combining multiple data sources from AWS S3 into structured data. Also, the structured data gets then stored on AWS S3 again, so Sparkify can use it for further analysis.
 
 ## Used input data
 
@@ -38,12 +37,6 @@ log_data/2018/11/2018-11-13-events.json
 And below is an example of what the data in a log file, 2018-11-12-events.json, looks like.
 
 ![2018-11-12-events.json structure](https://video.udacity-data.com/topher/2019/February/5c6c3f0a_log-data/log-data.png)
-
-## Purpose of this project
-
-As the startup sparkify is scaling up quickly, their existing data warehouse can not handle the massive data resources efficiently any longer. They heard about Spark and were curious how it could help them. With this project, they can now analyse their data in a distributed way in-memory. This leads to huge speedups comparing to the existing approach and allows them to keep track of their clients' behavior easily.
-
-Moreover, this data lake automates the entire data fusion process combining multiple data sources from AWS S3 into structured data. Also, the structured data gets then stored on AWS S3 again, so Sparkify can use it for further analysis.
 
 ## Generated tables
 
