@@ -16,7 +16,6 @@ os.environ['AWS_SECRET_ACCESS_KEY'] = config.get('AWS', 'AWS_SECRET_ACCESS_KEY')
 def create_spark_session():
     """
     Creates a new or uses the existing spark session.
-    :return:
     """
     spark = SparkSession \
         .builder \
